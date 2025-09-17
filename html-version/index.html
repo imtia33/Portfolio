@@ -4,543 +4,333 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Imtiaz Royhan - Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Configure Tailwind CSS
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            background: 'hsl(var(--background))',
-            foreground: 'hsl(var(--foreground))',
-            card: 'hsl(var(--card))',
-            'card-foreground': 'hsl(var(--card-foreground))',
-            popover: 'hsl(var(--popover))',
-            'popover-foreground': 'hsl(var(--popover-foreground))',
-            primary: 'hsl(var(--primary))',
-            'primary-foreground': 'hsl(var(--primary-foreground))',
-            secondary: 'hsl(var(--secondary))',
-            'secondary-foreground': 'hsl(var(--secondary-foreground))',
-            muted: 'hsl(var(--muted))',
-            'muted-foreground': 'hsl(var(--muted-foreground))',
-            accent: 'hsl(var(--accent))',
-            'accent-foreground': 'hsl(var(--accent-foreground))',
-            destructive: 'hsl(var(--destructive))',
-            'destructive-foreground': 'hsl(var(--destructive-foreground))',
-            border: 'hsl(var(--border))',
-            input: 'hsl(var(--input))',
-            ring: 'hsl(var(--ring))',
-          },
-          borderRadius: {
-            lg: 'var(--radius)',
-            md: 'calc(var(--radius) - 2px)',
-            sm: 'calc(var(--radius) - 4px)',
-          },
-        }
-      }
-    }
-  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="min-h-screen bg-background text-foreground relative">
-    <nav class="fixed left-8 top-1/2 -translate-y-1/2 z-10 hidden lg:block">
-      <div class="flex flex-col gap-4">
-        <div class="group relative flex items-center h-8">
-          <button
-            onclick="scrollToSection('intro')"
-            class="nav-button w-2 h-8 rounded-full transition-all duration-500 group-hover:w-24 group-hover:bg-foreground/10 bg-foreground"
-            data-section="intro"
-            aria-label="Navigate to intro"
-          ></button>
-          <button
-            onclick="scrollToSection('intro')"
-            class="absolute left-8 h-8 flex items-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm text-foreground capitalize whitespace-nowrap cursor-pointer"
-          >
-            intro
-          </button>
+  <div class="portfolio-container">
+    <nav class="navigation">
+      <div class="nav-list">
+        <div class="nav-item">
+          <a href="#intro" class="nav-indicator active" aria-label="Navigate to intro"></a>
+          <a href="#intro" class="nav-label">intro</a>
         </div>
-        <div class="group relative flex items-center h-8">
-          <button
-            onclick="scrollToSection('work')"
-            class="nav-button w-2 h-8 rounded-full transition-all duration-500 group-hover:w-24 group-hover:bg-foreground/10 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-            data-section="work"
-            aria-label="Navigate to work"
-          ></button>
-          <button
-            onclick="scrollToSection('work')"
-            class="absolute left-8 h-8 flex items-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm text-foreground capitalize whitespace-nowrap cursor-pointer"
-          >
-            work
-          </button>
+        <div class="nav-item">
+          <a href="#work" class="nav-indicator" aria-label="Navigate to work"></a>
+          <a href="#work" class="nav-label">work</a>
         </div>
-        <div class="group relative flex items-center h-8">
-          <button
-            onclick="scrollToSection('skills')"
-            class="nav-button w-2 h-8 rounded-full transition-all duration-500 group-hover:w-24 group-hover:bg-foreground/10 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-            data-section="skills"
-            aria-label="Navigate to skills"
-          ></button>
-          <button
-            onclick="scrollToSection('skills')"
-            class="absolute left-8 h-8 flex items-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm text-foreground capitalize whitespace-nowrap cursor-pointer"
-          >
-            skills
-          </button>
+        <div class="nav-item">
+          <a href="#skills" class="nav-indicator" aria-label="Navigate to skills"></a>
+          <a href="#skills" class="nav-label">skills</a>
         </div>
-        <div class="group relative flex items-center h-8">
-          <button
-            onclick="scrollToSection('connect')"
-            class="nav-button w-2 h-8 rounded-full transition-all duration-500 group-hover:w-24 group-hover:bg-foreground/10 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-            data-section="connect"
-            aria-label="Navigate to connect"
-          ></button>
-          <button
-            onclick="scrollToSection('connect')"
-            class="absolute left-8 h-8 flex items-center opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm text-foreground capitalize whitespace-nowrap cursor-pointer"
-          >
-            connect
-          </button>
+        <div class="nav-item">
+          <a href="#connect" class="nav-indicator" aria-label="Navigate to connect"></a>
+          <a href="#connect" class="nav-label">connect</a>
         </div>
       </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
-      <header
-        id="intro"
-        class="min-h-screen flex items-center opacity-0"
-      >
-        <div class="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
-          <div class="lg:col-span-3 space-y-6 sm:space-y-8">
-            <div class="space-y-3 sm:space-y-2">
+    <main class="content-wrapper">
+      <header class="hero-section" id="intro">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-text">
               <!-- Show image before Portfolio text on mobile -->
-              <div class="lg:hidden w-40 h-40 sm:w-48 sm:h-48 mx-auto mt-16 mb-8 sm:mt-18 sm:mb-10">
-                <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <div class="profile-mobile">
+                <div class="profile-frame">
                   <img 
                     src="https://scontent-sin2-3.xx.fbcdn.net/v/t39.30808-6/470188051_1539874426696401_2069158741001139087_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhtbGLAtAH9HWHtmNZmh6-CWXo9JaNMS8JZej0lo0xL8_85Cw_GIbEGtO6EVXCdSSGtPup21rPp3BZWrM1dTfo&_nc_ohc=46obbkoDN74Q7kNvwEwKuZ3&_nc_oc=AdmQT-9p2mVtoAbLg2CGLX8KHy5dLlVfkOOdjPhbm8vE_KxH__Uu27yY5Sws6hl-45oJ4_FxYHZVPmIJ6tLpz6Y2&_nc_zt=23&_nc_ht=scontent-sin2-3.xx&_nc_gid=gW7hL7c02lSSR2LC3G05SQ&oh=00_AfZCrwsAraqkDrTvUuz5G8LxemT8txeqGbZaxtKDoX-sEw&oe=68CE2835" 
                     alt="Imtiaz Royhan" 
-                    class="w-full h-full object-cover"
+                    class="profile-img"
                   />
                 </div>
               </div>
-              <div class="text-sm text-muted-foreground font-mono tracking-wider">PORTFOLIO / 2025</div>
-              <h1 class="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+              <div class="portfolio-badge">PORTFOLIO / 2025</div>
+              <h1 class="main-title">
                 Imtiaz
                 <br />
-                <span class="text-muted-foreground">Royhan</span>
+                <span class="title-highlight">Royhan</span>
               </h1>
             </div>
 
-            <div class="space-y-6 max-w-md">
-              <p class="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+            <div class="hero-description">
+              <p class="description-text">
                 Developing 
-                <span class="text-foreground"> design</span>,<span class="text-foreground"> technology</span>,
+                <span class="text-highlight"> design</span>,<span class="text-highlight"> technology</span>,
                 and
-                <span class="text-foreground"> personal experience</span>.
+                <span class="text-highlight"> personal experience</span>.
               </p>
 
-              <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
-                <div class="flex items-center gap-2">
-                  <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <div class="status-section">
+                <div class="availability">
+                  <div class="status-dot"></div>
                   Available for work
                 </div>
                 <div>Bangladesh</div>
               </div>
             </div>
           </div>
-           <div class="hidden lg:block w-64 h-64 xl:w-88 xl:h-88 2xl:w-80 2xl:h-80">
-              <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                <img 
-                  src="https://scontent-sin2-3.xx.fbcdn.net/v/t39.30808-6/470188051_1539874426696401_2069158741001139087_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhtbGLAtAH9HWHtmNZmh6-CWXo9JaNMS8JZej0lo0xL8_85Cw_GIbEGtO6EVXCdSSGtPup21rPp3BZWrM1dTfo&_nc_ohc=46obbkoDN74Q7kNvwEwKuZ3&_nc_oc=AdmQT-9p2mVtoAbLg2CGLX8KHy5dLlVfkOOdjPhbm8vE_KxH__Uu27yY5Sws6hl-45oJ4_FxYHZVPmIJ6tLpz6Y2&_nc_zt=23&_nc_ht=scontent-sin2-3.xx&_nc_gid=gW7hL7c02lSSR2LC3G05SQ&oh=00_AfZCrwsAraqkDrTvUuz5G8LxemT8txeqGbZaxtKDoX-sEw&oe=68CE2835" 
-                  alt="Imtiaz Royhan" 
-                  class="w-full h-full object-cover"
-                />
-              </div>
+          
+          <div class="profile-desktop">
+            <div class="profile-frame">
+              <img 
+                src="https://scontent-sin2-3.xx.fbcdn.net/v/t39.30808-6/470188051_1539874426696401_2069158741001139087_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGhtbGLAtAH9HWHtmNZmh6-CWXo9JaNMS8JZej0lo0xL8_85Cw_GIbEGtO6EVXCdSSGtPup21rPp3BZWrM1dTfo&_nc_ohc=46obbkoDN74Q7kNvwEwKuZ3&_nc_oc=AdmQT-9p2mVtoAbLg2CGLX8KHy5dLlVfkOOdjPhbm8vE_KxH__Uu27yY5Sws6hl-45oJ4_FxYHZVPmIJ6tLpz6Y2&_nc_zt=23&_nc_ht=scontent-sin2-3.xx&_nc_gid=gW7hL7c02lSSR2LC3G05SQ&oh=00_AfZCrwsAraqkDrTvUuz5G8LxemT8txeqGbZaxtKDoX-sEw&oe=68CE2835" 
+                alt="Imtiaz Royhan" 
+                class="profile-img"
+              />
             </div>
-          <div class="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
-            
-            <div class="space-y-4">
-              <div class="text-sm text-muted-foreground font-mono">CURRENTLY</div>
-              <div class="space-y-2">
-                <div class="text-foreground">Student</div>
-                <div class="text-muted-foreground">@IIUC</div>
-                <div class="text-xs text-muted-foreground">2023 — Present</div>
+          </div>
+          
+          <div class="sidebar-content">
+            <div class="info-block">
+              <div class="info-label">CURRENTLY</div>
+              <div class="job-details">
+                <div class="job-title">Student</div>
+                <div class="job-company">@IIUC</div>
+                <div class="job-period">2023 — Present</div>
               </div>
             </div>
 
-            <div class="space-y-4">
-              <div class="text-sm text-muted-foreground font-mono">FOCUS</div>
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                  React Native
-                </span>
-                <span class="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                  Appwrite
-                </span>
-                <span class="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                  Javascript
-                </span>
-                <span class="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                  OpenStreetMaps
-                </span>
-                <span class="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                  Node.js
-                </span>
-                <span class="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                  Mapping Algorithms
-                </span>
+            <div class="info-block">
+              <div class="info-label">FOCUS</div>
+              <div class="tags-container">
+                <span class="skill-tag">React Native</span>
+                <span class="skill-tag">Appwrite</span>
+                <span class="skill-tag">Javascript</span>
+                <span class="skill-tag">OpenStreetMaps</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Mapping Algorithms</span>
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      <section
-        id="work"
-        class="min-h-screen py-20 sm:py-32"
-      >
-        <div class="space-y-12 sm:space-y-16">
-          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-            <h2 class="text-3xl sm:text-4xl font-light text-foreground">My Works</h2>
-            <div class="text-sm text-muted-foreground font-mono">2023 — 2025</div>
+      <section id="work" class="section">
+        <div class="section-header">
+          <h2 class="section-title">My Works</h2>
+          <div class="section-period">2023 — 2025</div>
+        </div>
+
+        <div class="work-list">
+          <div class="work-item">
+            <div class="work-year">2025</div>
+            <div class="work-content">
+              <div class="work-header">
+                <h3 class="work-title">PRIM</h3>
+                <div class="work-subtitle">Github Assistant Web App</div>
+              </div>
+              <p class="work-description">A github assistant web app that helps you contribute better in github by documenting your PULL request, Reviewing PRs etc.</p>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Appwrite</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
           </div>
 
-          <div class="space-y-8 sm:space-y-12">
-            <div class="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500">
-              <div class="lg:col-span-2">
-                <div class="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                  2025
-                </div>
+          <div class="work-item">
+            <div class="work-year">2024</div>
+            <div class="work-content">
+              <div class="work-header">
+                <h3 class="work-title">Crimson</h3>
+                <div class="work-subtitle">Blood Donation App</div>
               </div>
-
-              <div class="lg:col-span-6 space-y-3">
-                <div>
-                  <h3 class="text-lg sm:text-xl font-medium text-foreground">PRIM</h3>
-                  <div class="text-muted-foreground">Github Assistant Web App</div>
-                </div>
-                <p class="text-foreground/80 leading-relaxed max-w-lg">A github assistant web app that helps you contribute better in github by documenting your PULL request, Reviewing PRs etc.</p>
-              </div>
-
-              <div class="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end mt-2 lg:mt-0">
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  React Native
-                </span>
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  Appwrite
-                </span>
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  JavaScript
-                </span>
-              </div>
+              <p class="work-description">An android and IOS based app for blood donation.</p>
             </div>
-
-            <div class="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500">
-              <div class="lg:col-span-2">
-                <div class="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                  2024
-                </div>
-              </div>
-
-              <div class="lg:col-span-6 space-y-3">
-                <div>
-                  <h3 class="text-lg sm:text-xl font-medium text-foreground">Crimson</h3>
-                  <div class="text-muted-foreground">Blood Donation App</div>
-                </div>
-                <p class="text-foreground/80 leading-relaxed max-w-lg">An android and IOS based app for blood donation.</p>
-              </div>
-
-              <div class="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end mt-2 lg:mt-0">
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  React Native
-                </span>
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  Appwrite
-                </span>
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  JavaScript
-                </span>
-              </div>
+            <div class="tech-tags">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Appwrite</span>
+              <span class="tech-tag">JavaScript</span>
             </div>
+          </div>
 
-            <div class="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500">
-              <div class="lg:col-span-2">
-                <div class="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                  2024
-                </div>
+          <div class="work-item">
+            <div class="work-year">2024</div>
+            <div class="work-content">
+              <div class="work-header">
+                <h3 class="work-title">TravX</h3>
+                <div class="work-subtitle">Local Routing App</div>
               </div>
-
-              <div class="lg:col-span-6 space-y-3">
-                <div>
-                  <h3 class="text-lg sm:text-xl font-medium text-foreground">TravX</h3>
-                  <div class="text-muted-foreground">Local Routing App</div>
-                </div>
-                <p class="text-foreground/80 leading-relaxed max-w-lg">A local routing app which can help people travel easily with directions and map and local vehicles fare data. It showed which way to and where to go and which local vehicles are available with cost.</p>
-              </div>
-
-              <div class="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end mt-2 lg:mt-0">
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  React Native
-                </span>
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  Appwrite
-                </span>
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  JavaScript
-                </span>
-              </div>
+              <p class="work-description">A local routing app which can help people travel easily with directions and map and local vehicles fare data. It showed which way to and where to go and which local vehicles are available with cost.</p>
             </div>
+            <div class="tech-tags">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Appwrite</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </div>
 
-            <div class="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500">
-              <div class="lg:col-span-2">
-                <div class="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                  2023
-                </div>
+          <div class="work-item">
+            <div class="work-year">2023</div>
+            <div class="work-content">
+              <div class="work-header">
+                <h3 class="work-title">Chat Application</h3>
+                <div class="work-subtitle">University Project</div>
               </div>
-
-              <div class="lg:col-span-6 space-y-3">
-                <div>
-                  <h3 class="text-lg sm:text-xl font-medium text-foreground">Chat Application</h3>
-                  <div class="text-muted-foreground">University Project</div>
-                </div>
-                <p class="text-foreground/80 leading-relaxed max-w-lg">A chat application made with C++ and QT.</p>
-              </div>
-
-              <div class="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end mt-2 lg:mt-0">
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-500">
-                  C++</span>
-                <span class="px-2 py-1 text-xs text-foreground/80 rounded group-hover:border-muted-foreground/50 transition-colors duration-300">
-                  QT
-                </span>
-              </div>
+              <p class="work-description">A chat application made with C++ and QT.</p>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">QT</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        id="skills"
-        class="min-h-screen py-20 sm:py-32 opacity-0"
-      >
-        <div class="space-y-12 sm:space-y-16">
-          <h2 class="text-3xl sm:text-4xl font-light">Skills</h2>
+      <section id="skills" class="section">
+        <h2 class="section-title">Skills</h2>
 
-          <div class="grid gap-8 lg:grid-cols-2">
-            <!-- Technical Skills -->
-            <div class="space-y-6">
-              <h3 class="text-xl font-medium text-muted-foreground">Technical Skills</h3>
-              <div class="space-y-4">
-                <div class="space-y-2">
-                  <div class="flex justify-between items-center">
-                    <span class="text-sm font-medium">React Native</span>
-                    <span class="text-xs text-muted-foreground">80%</span>
-                  </div>
-                  <div class="w-full bg-muted rounded-full h-2">
-                    <div
-                      class="bg-foreground h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
-                      data-width="80"
-                    ></div>
-                  </div>
+        <div class="skills-grid">
+          <!-- Technical Skills -->
+          <div class="skills-category">
+            <h3 class="category-title">Technical Skills</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">React Native</span>
+                  <span class="skill-percentage">80%</span>
                 </div>
-                <div class="space-y-2">
-                  <div class="flex justify-between items-center">
-                    <span class="text-sm font-medium">JavaScript</span>
-                    <span class="text-xs text-muted-foreground">84%</span>
-                  </div>
-                  <div class="w-full bg-muted rounded-full h-2">
-                    <div
-                      class="bg-foreground h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
-                      data-width="84"
-                    ></div>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <div class="flex justify-between items-center">
-                    <span class="text-sm font-medium">Node.js</span>
-                    <span class="text-xs text-muted-foreground">75%</span>
-                  </div>
-                  <div class="w-full bg-muted rounded-full h-2">
-                    <div
-                      class="bg-foreground h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
-                      data-width="75"
-                    ></div>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <div class="flex justify-between items-center">
-                    <span class="text-sm font-medium">C++</span>
-                    <span class="text-xs text-muted-foreground">90%</span>
-                  </div>
-                  <div class="w-full bg-muted rounded-full h-2">
-                    <div
-                      class="bg-foreground h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
-                      data-width="90"
-                    ></div>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <div class="flex justify-between items-center">
-                    <span class="text-sm font-medium">Appwrite</span>
-                    <span class="text-xs text-muted-foreground">75%</span>
-                  </div>
-                  <div class="w-full bg-muted rounded-full h-2">
-                    <div
-                      class="bg-foreground h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
-                      data-width="75"
-                    ></div>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <div class="flex justify-between items-center">
-                    <span class="text-sm font-medium">SQL</span>
-                    <span class="text-xs text-muted-foreground">72%</span>
-                  </div>
-                  <div class="w-full bg-muted rounded-full h-2">
-                    <div
-                      class="bg-foreground h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
-                      data-width="72"
-                    ></div>
-                  </div>
+                <div class="progress-bar">
+                  <div class="progress-fill progress-80" data-width="80"></div>
                 </div>
               </div>
-            </div>
-
-            <!-- Soft Skills -->
-            <div class="space-y-6">
-              <h3 class="text-xl font-medium text-muted-foreground">Soft Skills</h3>
-              <div class="grid grid-cols-2 gap-4">
-                <div class="p-3 border border-border rounded-lg hover:border-muted-foreground/50 transition-colors duration-300 text-center">
-                  <span class="text-sm">Problem Solving</span>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-percentage">84%</span>
                 </div>
-                <div class="p-3 border border-border rounded-lg hover:border-muted-foreground/50 transition-colors duration-300 text-center">
-                  <span class="text-sm">Designing</span>
+                <div class="progress-bar">
+                  <div class="progress-fill progress-84" data-width="84"></div>
                 </div>
-                <div class="p-3 border border-border rounded-lg hover:border-muted-foreground/50 transition-colors duration-300 text-center">
-                  <span class="text-sm">App Development</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Node.js</span>
+                  <span class="skill-percentage">75%</span>
                 </div>
-                <div class="p-3 border border-border rounded-lg hover:border-muted-foreground/50 transition-colors duration-300 text-center">
-                  <span class="text-sm">AI Integration</span>
+                <div class="progress-bar">
+                  <div class="progress-fill progress-75" data-width="75"></div>
                 </div>
-                <div class="p-3 border border-border rounded-lg hover:border-muted-foreground/50 transition-colors duration-300 text-center">
-                  <span class="text-sm">Support</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">C++</span>
+                  <span class="skill-percentage">90%</span>
                 </div>
-                <div class="p-3 border border-border rounded-lg hover:border-muted-foreground/50 transition-colors duration-300 text-center">
-                  <span class="text-sm">Taking the easy way out</span>
+                <div class="progress-bar">
+                  <div class="progress-fill progress-90" data-width="90"></div>
                 </div>
-                <div class="p-3 border border-border rounded-lg hover:border-muted-foreground/50 transition-colors duration-300 text-center">
-                  <span class="text-sm">Code Review</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Appwrite</span>
+                  <span class="skill-percentage">75%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill progress-75" data-width="75"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">SQL</span>
+                  <span class="skill-percentage">72%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill progress-72" data-width="72"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Tools & Technologies -->
-          <div class="space-y-6">
-            <h3 class="text-xl font-medium text-muted-foreground">Tools & Technologies</h3>
-            <div class="flex flex-wrap gap-3">
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                JavaScript
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                Git
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                Docker
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                Figma
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                Tailwind CSS
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                React Native Maps
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                Appwrite
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                Vive code fixer
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                Expo
-              </span>
-              <span class="px-3 py-2 text-sm border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300">
-                Reanimated
-              </span>
+          <!-- Soft Skills -->
+          <div class="skills-category">
+            <h3 class="category-title">Soft Skills</h3>
+            <div class="soft-skills">
+              <div class="soft-skill">Problem Solving</div>
+              <div class="soft-skill">Designing</div>
+              <div class="soft-skill">App Development</div>
+              <div class="soft-skill">AI Integration</div>
+              <div class="soft-skill">Support</div>
+              <div class="soft-skill">Taking the easy way out</div>
+              <div class="soft-skill">Code Review</div>
             </div>
+          </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="tools-section">
+          <h3 class="category-title">Tools & Technologies</h3>
+          <div class="tools-grid">
+            <span class="tool-item">JavaScript</span>
+            <span class="tool-item">Git</span>
+            <span class="tool-item">Docker</span>
+            <span class="tool-item">Figma</span>
+            <span class="tool-item">Tailwind CSS</span>
+            <span class="tool-item">React Native Maps</span>
+            <span class="tool-item">Appwrite</span>
+            <span class="tool-item">Vive code fixer</span>
+            <span class="tool-item">Expo</span>
+            <span class="tool-item">Reanimated</span>
           </div>
         </div>
       </section>
 
-      <section 
-        id="connect" 
-        class="py-20 sm:py-32 opacity-0"
-      >
-        <div class="grid lg:grid-cols-2 gap-12 sm:gap-16">
-          <div class="space-y-6 sm:space-y-8">
-            <h2 class="text-3xl sm:text-4xl font-light">Connect</h2>
+      <section id="connect" class="section">
+        <div class="connect-grid">
+          <div class="connect-content">
+            <h2 class="section-title">Connect</h2>
+            
+            <p class="connect-description">
+              Always interested in new opportunities, collaborations, and conversations about technology and design.
+            </p>
 
-            <div class="space-y-6">
-              <p class="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                Always interested in new opportunities, collaborations, and conversations about technology and design.
-              </p>
-
-              <div class="space-y-4">
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=imtiaz.axi@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
-                >
-                  <span class="text-base sm:text-lg">imtiaz.axi@gmail.com</span>
-                  
-                </a>
-              </div>
+            <div class="contact-info">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=imtiaz.axi@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                <span class="email-text">imtiaz.axi@gmail.com</span>
+              </a>
             </div>
           </div>
 
-          <div class="space-y-6 sm:space-y-8">
-            <div class="text-sm text-muted-foreground font-mono">ELSEWHERE</div>
+          <div class="social-section">
+            <div class="info-label">ELSEWHERE</div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="social-links">
               <a
                 href="https://github.com/imtia33"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group p-4 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-sm"
+                class="social-link"
               >
-                <div class="space-y-2">
-                  <div class="text-foreground group-hover:text-muted-foreground transition-colors duration-300">
-                    GitHub
-                  </div>
-                  <div class="text-sm text-muted-foreground">@imtia33</div>
+                <div class="social-content">
+                  <div class="social-name">GitHub</div>
+                  <div class="social-handle">@imtia33</div>
                 </div>
               </a>
               <a
                 href="https://discord.com/users/axistro.ff"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group p-4 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-sm"
+                class="social-link"
               >
-                <div class="space-y-2">
-                  <div class="text-foreground group-hover:text-muted-foreground transition-colors duration-300">
-                    Discord
-                  </div>
-                  <div class="text-sm text-muted-foreground">@axistro.ff</div>
+                <div class="social-content">
+                  <div class="social-name">Discord</div>
+                  <div class="social-handle">@axistro.ff</div>
                 </div>
               </a>
               <a
                 href="https://facebook.com/imtiaz.axi"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group p-4 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-sm"
+                class="social-link"
               >
-                <div class="space-y-2">
-                  <div class="text-foreground group-hover:text-muted-foreground transition-colors duration-300">
-                    Facebook
-                  </div>
-                  <div class="text-sm text-muted-foreground">@imtiaz.axi</div>
+                <div class="social-content">
+                  <div class="social-name">Facebook</div>
+                  <div class="social-handle">@imtiaz.axi</div>
                 </div>
               </a>
             </div>
@@ -548,48 +338,17 @@
         </div>
       </section>
 
-      <footer class="py-12 sm:py-16 border-t border-border">
-        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
-          <div class="space-y-2">
-            <div class="text-sm text-muted-foreground">© 2025 Imtiaz Royhan. All rights reserved.</div>
-            <div class="text-xs text-muted-foreground">Built with inspiration.</div>
-          </div>
-
-          <div class="flex items-center gap-4">
-            <button
-              onclick="toggleTheme()"
-              class="group p-3 rounded-lg border border-border hover:border-muted-foreground/50 transition-all duration-300"
-              aria-label="Toggle theme"
-            >
-              <svg
-                id="theme-icon-dark"
-                class="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414 0zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <svg
-                id="theme-icon-light"
-                class="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300 hidden"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-              </svg>
-            </button>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-text">
+            <div class="copyright">© 2025 Imtiaz Royhan. All rights reserved.</div>
+            <div class="built-info">Built with inspiration.</div>
           </div>
         </div>
       </footer>
     </main>
 
-    <div class="fixed bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"></div>
+    <div class="bottom-gradient"></div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
